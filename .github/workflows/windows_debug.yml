@@ -1,4 +1,4 @@
-name: continuous-integration
+name: windows-debug
 
 # syntax https://help.github.com/en/articles/workflow-syntax-for-github-actions
 on:
@@ -14,7 +14,7 @@ on:
   #     - main
   #   tags:
   #     - '*'
-  
+
   workflow_dispatch:
     inputs:
       build_windows:
