@@ -2,36 +2,17 @@ name: continuous-integration
 
 # syntax https://help.github.com/en/articles/workflow-syntax-for-github-actions
 on:
-  # Comment out scheduled runs for now
-  # # Run at 2am every night.
-  # schedule:
-  #   - cron: '0 2 * * *'
-  # pull_request:
-  #   branches:
-  #     - '*'
-  # push:
-  #   branches:
-  #     - main
-  #   tags:
-  #     - '*'
-  workflow_dispatch:
-    inputs:
-      build_ubuntu:
-        description: 'Build Ubuntu wheels'
-        required: false
-        default: false
-        type: boolean
-      build_macos:
-        description: 'Build macOS wheels'
-        required: false
-        default: false
-        type: boolean
-      build_windows:
-        description: 'Build Windows wheels'
-        required: false
-        default: true
-        type: boolean
-
+  # Run at 2am every night.
+  schedule:
+    - cron: '0 2 * * *'
+  pull_request:
+    branches:
+      - '*'
+  push:
+    branches:
+      - main
+    tags:
+      - '*'
 
 jobs:
   windows:
